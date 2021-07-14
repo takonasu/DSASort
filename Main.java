@@ -2,13 +2,15 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        final int ARRAY_LENGTH = 70000;
+        final int ARRAY_LENGTH = 10000;
 
         int[] A = new int[ARRAY_LENGTH];
         Random random = new Random();
         for (int i = 0; i < A.length; i++) {
             A[i] = random.nextInt(ARRAY_LENGTH * 100);
         }
+
+        System.out.println("乱数生成完了");
 
         long startTime, endTime;
 
@@ -41,5 +43,11 @@ public class Main {
         new InsertionSort(A);
         endTime = System.currentTimeMillis();
         System.out.println("挿入ソート：経過時間" + (endTime - startTime) + "ms");
+
+        // シェルソート
+        startTime = System.currentTimeMillis();
+        new ShellSort(A);
+        endTime = System.currentTimeMillis();
+        System.out.println("シェルソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
