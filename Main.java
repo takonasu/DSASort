@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        final int ARRAY_LENGTH = 100000;
+        final int ARRAY_LENGTH = 70000;
 
         int[] A = new int[ARRAY_LENGTH];
         Random random = new Random();
@@ -35,5 +35,11 @@ public class Main {
         new BetterBubbleSort(A);
         endTime = System.currentTimeMillis();
         System.out.println("改良バブルソート：経過時間" + (endTime - startTime) + "ms");
+
+        // 挿入ソート
+        startTime = System.currentTimeMillis();
+        new InsertionSort(A);
+        endTime = System.currentTimeMillis();
+        System.out.println("挿入ソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
