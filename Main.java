@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        final int ARRAY_LENGTH = 10000;
+        final int ARRAY_LENGTH = 100000;
 
         int[] A = new int[ARRAY_LENGTH];
         Random random = new Random();
@@ -49,5 +49,11 @@ public class Main {
         new ShellSort(A);
         endTime = System.currentTimeMillis();
         System.out.println("シェルソート：経過時間" + (endTime - startTime) + "ms");
+
+        // ヒープソート
+        startTime = System.currentTimeMillis();
+        new HeapSort(A);
+        endTime = System.currentTimeMillis();
+        System.out.println("ヒープソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
