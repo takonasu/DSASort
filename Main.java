@@ -1,7 +1,8 @@
 import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
+
+    static int[] makeRandom() {
         final int ARRAY_LENGTH = 100000;
 
         int[] A = new int[ARRAY_LENGTH];
@@ -9,50 +10,52 @@ public class Main {
         for (int i = 0; i < A.length; i++) {
             A[i] = random.nextInt(ARRAY_LENGTH * 100);
         }
+        return A;
+    }
 
-        System.out.println("乱数生成完了");
+    public static void main(String[] args) {
 
         long startTime, endTime;
 
         // 単純ソート
         startTime = System.currentTimeMillis();
-        new SimpleSort(A);
+        new SimpleSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("単純ソート：経過時間" + (endTime - startTime) + "ms");
 
         // 選択ソート
         startTime = System.currentTimeMillis();
-        new SelectionSort(A);
+        new SelectionSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("選択ソート：経過時間" + (endTime - startTime) + "ms");
 
         // バブルソート
         startTime = System.currentTimeMillis();
-        new BubbleSort(A);
+        new BubbleSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("バブルソート：経過時間" + (endTime - startTime) + "ms");
 
         // 改良バブルソート
         startTime = System.currentTimeMillis();
-        new BetterBubbleSort(A);
+        new BetterBubbleSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("改良バブルソート：経過時間" + (endTime - startTime) + "ms");
 
         // 挿入ソート
         startTime = System.currentTimeMillis();
-        new InsertionSort(A);
+        new InsertionSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("挿入ソート：経過時間" + (endTime - startTime) + "ms");
 
         // シェルソート
         startTime = System.currentTimeMillis();
-        new ShellSort(A);
+        new ShellSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("シェルソート：経過時間" + (endTime - startTime) + "ms");
 
         // ヒープソート
         startTime = System.currentTimeMillis();
-        new HeapSort(A);
+        new HeapSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("ヒープソート：経過時間" + (endTime - startTime) + "ms");
     }
