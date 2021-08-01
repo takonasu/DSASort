@@ -58,5 +58,11 @@ public class Main {
         new HeapSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("ヒープソート：経過時間" + (endTime - startTime) + "ms");
+        
+        // クイックソート
+        startTime = System.currentTimeMillis();
+        new QuickSort(makeRandom());
+        endTime = System.currentTimeMillis();
+        System.out.println("クイックソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
