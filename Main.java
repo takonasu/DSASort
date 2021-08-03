@@ -2,8 +2,9 @@ import java.util.Random;
 
 public class Main {
 
+    static int ARRAY_LENGTH = 100000;
+
     static int[] makeRandom() {
-        final int ARRAY_LENGTH = 100000;
 
         int[] A = new int[ARRAY_LENGTH];
         Random random = new Random();
@@ -70,5 +71,11 @@ public class Main {
         new MergeSort(makeRandom());
         endTime = System.currentTimeMillis();
         System.out.println("マージソート：経過時間" + (endTime - startTime) + "ms");
+
+        // バケットソート
+        startTime = System.currentTimeMillis();
+        new BucketSort(makeRandom(), ARRAY_LENGTH * 100);
+        endTime = System.currentTimeMillis();
+        System.out.println("バケットソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
