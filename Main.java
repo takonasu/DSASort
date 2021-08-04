@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
 
-    static int ARRAY_LENGTH = 100000;
+    static int ARRAY_LENGTH = 50000;
 
     static int[] makeRandom() {
 
@@ -77,5 +77,12 @@ public class Main {
         new BucketSort(makeRandom(), ARRAY_LENGTH * 100);
         endTime = System.currentTimeMillis();
         System.out.println("バケットソート：経過時間" + (endTime - startTime) + "ms");
+
+        // 基数ソート
+        // 桁数が多いとjava.lang.StackOverflowErrorを出すので注意
+        startTime = System.currentTimeMillis();
+        new RadixSort(makeRandom(), ARRAY_LENGTH * 100);
+        endTime = System.currentTimeMillis();
+        System.out.println("基数ソート：経過時間" + (endTime - startTime) + "ms");
     }
 }
