@@ -1,5 +1,5 @@
-public class MergeSort {
-    public MergeSort(int[] arr) {
+public class MergeSort2 {
+    public MergeSort2(int[] arr) {
         int[] A = { 13, 6, 8, 1, 10, 18, 2, 5, 9 };
         merge_sort(A, 0, A.length - 1);
 
