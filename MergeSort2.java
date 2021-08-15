@@ -1,6 +1,6 @@
 public class MergeSort2 {
     public MergeSort2(int[] arr) {
-        int[] A = { 13, 6, 8, 1, 10, 18, 2, 5, 9 };
+        int[] A = { 8, 15, 1, 9, 30, 27, 6, 5, 98, 42, 10, 57, 31 };
         merge_sort(A, 0, A.length - 1);
 
         // 確認

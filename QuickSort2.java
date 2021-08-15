@@ -1,6 +1,6 @@
 public class QuickSort2 {
     public QuickSort2(int[] arr) {
-        int[] A = { 5, 8, 6, 10, 1, 3, 4, 11, 7 };
+        int[] A ={ 8, 15, 1, 9, 30, 27, 6, 5, 98, 42, 10, 57, 31 };
         quick_sort(A, 0, A.length - 1);
 
         // 確認
@@ -14,11 +14,7 @@ public class QuickSort2 {
         if (left < right) {
             int pivot = right;
             p = partition(A, pivot, left, right);
-            // 確認
-            for (int i = 0; i < A.length; i++) {
-                System.out.print(A[i] + ",");
-            }
-            System.out.println();
+
 
             quick_sort(A, left, p - 1);
             quick_sort(A, p + 1, right);
@@ -34,6 +30,11 @@ public class QuickSort2 {
         int r = right - 1;
 
         while (true) {
+                        // 確認
+                        for (int i = 0; i < A.length; i++) {
+                            System.out.print(A[i] + ",");
+                        }
+                        System.out.println();
             while (A[l] < A[right]) {
                 l++;
             }

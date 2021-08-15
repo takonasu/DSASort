@@ -1,17 +1,18 @@
 public class HeapSort {
     public HeapSort(int[] arr) {
 
-        for (int n = arr.length; 0 < n; n--) {
-            buildHeap(arr, n);
-            int tmp = arr[n - 1];
-            arr[n - 1] = arr[0];
+        buildHeap(arr, arr.length);
+        for (int n = arr.length - 1; 0 < n; n--) {
+            int tmp = arr[n];
+            arr[n] = arr[0];
             arr[0] = tmp;
+            shift_down(arr, 0, n);
         }
 
         // // 確認
-        // for (int i = 0; i < arr.length; i++) {
-        //     System.out.println(arr[i]);
-        // }
+    //     for (int i = 0; i < arr.length; i++) {
+    //         System.out.println(arr[i]);
+    //     }
     }
 
     public void buildHeap(int[] A, int n) {
@@ -31,7 +32,7 @@ public class HeapSort {
             // 右の子が存在するか
             if (2 * x + 2 <= n - 1) {
                 // 左の子が右の子より大きい時
-                if (A[2 * x + 1] < A[2 * x + 2]) {
+                if (A[2 * x + 2] < A[2 * x + 1]) {
                     childIndex = 2 * x + 1;
                 } else {
                     childIndex = 2 * x + 2;
@@ -40,8 +41,8 @@ public class HeapSort {
                 childIndex = 2 * x + 1;
             }
 
-            // 親の値と子の小さいほう値を比較
-            if (A[childIndex] <= A[x]) {
+            // 親と子の大きいほうを比較
+            if (A[x] <= A[childIndex]) {
                 int tmp = A[x];
                 A[x] = A[childIndex];
                 A[childIndex] = tmp;
